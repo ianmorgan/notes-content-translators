@@ -1,4 +1,4 @@
 notes-content-translators
 =========================
 
-Micro serice for taking connet in one format (eg. markup) and converting to another (eg html)
+Micro service for taking content in one format (e.g. markup) and converting to another (e.g. html)

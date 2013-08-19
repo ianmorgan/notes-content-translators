@@ -1,0 +1,3 @@
+#curl  POST -d @../resources/demo.md  http://localhost:4402/markdown/to/html
+
+curl  -F file=@../resources/demo.md  http://localhost:4402/markdown/to/html
