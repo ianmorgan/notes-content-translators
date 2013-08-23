@@ -16,6 +16,7 @@ require File.join(File.dirname(__FILE__), 'modules/string_mixins')
 class NotesTranslatorsApp < Sinatra::Base
 
 helpers NotesHelpers
+#disable :protection
 RubyPython.start()
 
 get '/' do
@@ -27,11 +28,27 @@ get '/about' do
 end
 
 post '/markdown/to/html' do 
+  
+  #puts request.host
+  #puts request.POST()
+  
   puts params
   
-  uploaded = params[:file][:tempfile].read
-  puts uploaded 
-  markdown2 uploaded  
+  if params[:file] != nil
+     uploaded = params[:file][:tempfile].read
+  end
+  
+  if params['payload'] != nil
+      uploaded = params['payload']
+   end
+  
+  puts uploaded
+  #puts uploaded 
+  html = markdown2(uploaded)  
+  
+  puts html
+  html
+  #"hjkhds"
 end
 
 
